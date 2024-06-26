@@ -33,7 +33,7 @@ body {
 }
 
 .grids {
-    /* border: 2px solid red; */
+    border:1.2px solid rgb(125, 0, 105);
     display: flex;
     font-size: 3rem;
     justify-content: center;

@@ -9,7 +9,8 @@ let winningCase = [
 let gridArr = [];
 let count = 0;
 let win = false;
-let container = document.querySelector(".container")
+let sparkle = document.querySelector(".sparkle");
+let container = document.querySelector(".container");
 let backaudio = new Audio("music.mp3");
 
 //This is the engine of  the game..
@@ -45,6 +46,7 @@ for (let i = 1; i < 10; i++) {       //logic to append the grid  in  DOM..
                 setTimeout(() => {
                     container.style.display = "none";
                     restart.style.display = 'block';
+                    sparkle.style.display = "block";
                     gridText1.style.background = ''
                     gridText2.style.background = ''
                     gridText3.style.background = ''
@@ -61,7 +63,6 @@ for (let i = 1; i < 10; i++) {       //logic to append the grid  in  DOM..
         gridArr.forEach((e) => {
             if (!e.innerText) {
                 count += 1
-                console.log(count)
             }
         });
         if (count == 0 && !win) {
@@ -86,6 +87,8 @@ for (let i = 1; i < 10; i++) {       //logic to append the grid  in  DOM..
     restart.addEventListener("click", () => {
         container.style.display = "grid";
         winnerName.innerText = ``
+        sparkle.style.display = "none";
+
         restart.style.display = 'none';
 
         document.querySelector(`.grid${i}`).innerText = '';

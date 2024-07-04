@@ -11,6 +11,11 @@ let count = 0;
 let win = false;
 let container = document.querySelector(".container")
 
+//playing background music
+ let backaudio = new Audio("music.mp3");
+backaudio.play();
+backaudio.loop= true;
+
 
 
 //This is the engine of  the game..

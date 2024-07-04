@@ -10,13 +10,7 @@ let gridArr = [];
 let count = 0;
 let win = false;
 let container = document.querySelector(".container")
-
-//playing background music
- let backaudio = new Audio("music.mp3");
-backaudio.play();
-backaudio.loop= true;
-
-
+let backaudio = new Audio("music.mp3");
 
 //This is the engine of  the game..
 for (let i = 1; i < 10; i++) {       //logic to append the grid  in  DOM..
@@ -67,14 +61,15 @@ for (let i = 1; i < 10; i++) {       //logic to append the grid  in  DOM..
         gridArr.forEach((e) => {
             if (!e.innerText) {
                 count += 1
+                console.log(count)
             }
         });
-        if (count == 1 && !win) {
+        if (count == 0 && !win) {
             winnerName.innerText = `Match Draw..`;
             container.style.display = "none";
             restart.style.display = 'block';
         };
-        count = 1;
+        count = 0;
 
 
         //logic to change the symbol
@@ -98,4 +93,8 @@ for (let i = 1; i < 10; i++) {       //logic to append the grid  in  DOM..
 
     })
 };
+window.addEventListener("load", () => {
+    backaudio.play();
+    backaudio.loop = true;
+})
 

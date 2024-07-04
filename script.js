@@ -93,4 +93,9 @@ for (let i = 1; i < 10; i++) {       //logic to append the grid  in  DOM..
 
     })
 };
+window.onload(()=>{
+    let audio = new Audio("music.mp3");
+    audio.play();
+    audio.loop = true;
+})
 
